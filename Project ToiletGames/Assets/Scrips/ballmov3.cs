@@ -6,13 +6,13 @@ public class ballmov3 : MonoBehaviour {
 	public Transform sphere3D;
 	public float ballRadius = 1;
 	float c;
-	Rigidbody2D rb;
+	Rigidbody rb;
 	Vector3 axis;
 	float angle;
 	
 	void Start () {
 		c = 2*Mathf.PI*ballRadius;
-		rb = rigidbody2D;
+		rb = rigidbody;
 	}
 	
 	void Update () {
