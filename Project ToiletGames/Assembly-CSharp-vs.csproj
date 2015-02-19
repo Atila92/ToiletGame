@@ -46,12 +46,13 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scrips\BallAnimation.cs" />
      <Compile Include="Assets\Scrips\ball.cs" />
-     <Compile Include="Assets\Scrips\ballmov.cs" />
-     <Compile Include="Assets\Scrips\ballmov3.cs" />
-     <Compile Include="Assets\Scrips\ballmov4.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="TouchScript">
+ <HintPath>E:/Users/SidonK/Documents/GitHub/ToiletGame/Project ToiletGames/Assets/TouchScript/Plugins/TouchScript.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
