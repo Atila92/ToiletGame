@@ -8,10 +8,13 @@ public class ball : MonoBehaviour {
 	public float sensitivity; // sensitivitet på up og ned, side til side
 	
 	private Vector3 touchPos;
+	Vector3 startPos;
 	private bool isRolling; //  bool som bare forsætter om bolden er i bevægelse
 	
 	void Start () {
 		isRolling = false;
+		startPos=transform.position;
+
 	}
 	
 	void Update () {
@@ -36,7 +39,13 @@ public class ball : MonoBehaviour {
 					power = maxPower; // sikre at power ikke kommer over Maxpower
 				}
 				rigidbody.AddForce(new Vector3(throwDirection1, throwDirection2, 0), 0); // adder force til bolden
+				isRolling = false; //resetter vore bool til false så vi kan resette bolden
 			}
 		}
+	}
+
+	public void OnBecameInvisible() { //metode som bliver kald når bolden ikke kan ses, og resetter bolden så den er klar til at rolle igen
+		transform.position=startPos;
+		rigidbody.velocity = Vector3.zero;
 	}
 }
