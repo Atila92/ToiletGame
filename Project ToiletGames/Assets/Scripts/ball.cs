@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿ using UnityEngine;
 using System.Collections;
 
 public class ball : MonoBehaviour {
@@ -10,9 +10,15 @@ public class ball : MonoBehaviour {
 	private Vector3 touchPos;
 	Vector3 startPos;
 	private bool isRolling; //  bool som bare forsætter om bolden er i bevægelse
+	private float height;
+	private float width;
 	
 	void Start () {
 		isRolling = false;
+		height =Camera.main.orthographicSize * 2;
+		width = height * Screen.width/ Screen.height;
+
+		transform.localScale = Vector3.one * height / 10f;
 		startPos=transform.position;
 
 	}
@@ -47,5 +53,6 @@ public class ball : MonoBehaviour {
 	public void OnBecameInvisible() { //metode som bliver kald når bolden ikke kan ses, og resetter bolden så den er klar til at rolle igen
 		transform.position=startPos;
 		rigidbody.velocity = Vector3.zero;
+		transform.localScale = Vector3.one * height / 10f;
 	}
 }

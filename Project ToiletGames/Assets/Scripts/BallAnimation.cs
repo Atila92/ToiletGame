@@ -4,7 +4,7 @@ using System.Collections;
 public class BallAnimation : MonoBehaviour {
 
 	public Transform sphere3D;
-	public float ballRadius = 1;
+	public float ballRadius = 1f;
 	float c;
 	Rigidbody rb;
 	Vector3 axis;
